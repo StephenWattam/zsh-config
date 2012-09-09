@@ -91,11 +91,17 @@ setopt append_history \
 bindkey -e      # emacs mode
 bindkey "^[[3~" delete-char 
 bindkey "^[[5~" forward-word 
-bindkey "^[[6~" backward-word 
+bindkey "^[[6~" backward-word
+
+# Normal keyboard
 bindkey "^[[7~" beginning-of-line
 bindkey "^[[8~" end-of-line 
 
-
+# Apple keyboard
+#if [[ -n `lsusb | grep Apple | grep Keyboard` ]]; then
+    bindkey "^[[1~" beginning-of-line
+    bindkey "^[[4~" end-of-line 
+#fi
 
 # From http://zshwiki.org/home/zle/ircclientlikeinput
 # allows me to get a blank line with "down", like irssi
