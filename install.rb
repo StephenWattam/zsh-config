@@ -2,7 +2,7 @@
 require 'pathname'
 
 # where the configs are kept
-APP_DIR="./configs"
+APP_DIR="./config"
 IGNORE=[".", "..", ".git", ".svn"]
 
 # ------------------------------------------------------------------------
