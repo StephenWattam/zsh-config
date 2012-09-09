@@ -86,16 +86,12 @@ setopt append_history \
 # Configure special keys for moving back/forward
 # This is somewhat problematic with ZLE, but this config works
 # for rxvtc at the least
-bindkey -v      # vi mode
-bindkey "^P" vi-up-line-or-history
-bindkey "^N" vi-down-line-or-history
-
-bindkey "^[[1~" vi-beginning-of-line   # Home
-bindkey "^[[4~" vi-end-of-line         # End
-bindkey '^[[2~' beep                   # Insert
-bindkey '^[[3~' delete-char            # Del
-bindkey '^[[5~' vi-backward-blank-word # Page Up
-bindkey '^[[6~' vi-forward-blank-word  # Page Down
+bindkey -e      # emacs mode
+bindkey "^[[3~" delete-char 
+bindkey "^[[5~" forward-word 
+bindkey "^[[6~" backward-word 
+bindkey "^[[7~" beginning-of-line
+bindkey "^[[8~" end-of-line 
 
 
 
