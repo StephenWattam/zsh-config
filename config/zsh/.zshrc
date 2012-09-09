@@ -27,6 +27,7 @@ ZBEEP='\e[?5h\e[?5l'
 # pushd_ignore_dups: Avoid pushing endless copies of the same directory onto the pushd stack
 # pushdsilent: Do not echo the stack when push/popd used, it is printed as part of PROMPT anyway
 # sh_file_expansion: Expand filenames first in commands
+# hist_ignore_space: When a command is prefixed with a space, do not add it to the history
 setopt append_history \
     auto_param_slash \
     auto_pushd \
@@ -46,7 +47,8 @@ setopt append_history \
     autocd \
     extendedglob \
     nomatch \
-    pushdsilent
+    pushdsilent \
+    hist_ignore_space
 
 
 
