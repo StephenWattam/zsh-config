@@ -2,7 +2,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-ZBEEP='\e[?5h\e[?5l'
+ZBEEP='\e[?5h\e[?5l'    # Visual bell
 
 # Shell Options
 # Options:
@@ -17,8 +17,8 @@ ZBEEP='\e[?5h\e[?5l'
 # nocorrect_all: Don't try to correct all arguments
 # extended_history: save timestamps in history
 # nomatch: print an error if a file pattern gives no matches
-# nohash_dirs: Do not keep hashes of directories
-# nohash_cmds: Do not try to remember commands
+# -nohash_dirs: Do not keep hashes of directories
+# -nohash_cmds: Do not try to remember commands
 # -nohash_list_all: Don't try to hash everything in a command before completion
 # list_types: Show filetype in completion menu using a trailing flag
 # multios: Allow for multiple redirects by implying 'tee' and 'cat' > one > two | three
@@ -28,6 +28,7 @@ ZBEEP='\e[?5h\e[?5l'
 # pushdsilent: Do not echo the stack when push/popd used, it is printed as part of PROMPT anyway
 # sh_file_expansion: Expand filenames first in commands
 # hist_ignore_space: When a command is prefixed with a space, do not add it to the history
+# hash_executables_only: Don't hash non-executable things.  Speeds up hashing larghe numbers of files or slow fs.
 setopt append_history \
     auto_param_slash \
     auto_pushd \
@@ -36,19 +37,19 @@ setopt append_history \
     nocorrect \
     nocorrect_all \
     extended_history \
-    nohash_dirs \
-    nohash_cmds \
     list_types \
     nomail_warning \
     numeric_glob_sort \
     pushd_ignore_dups \
-    sh_file_expansion \
     multios \
     autocd \
     extendedglob \
     nomatch \
     pushdsilent \
-    hist_ignore_space
+    hist_ignore_space\
+    hash_executables_only
+    # nohash_dirs \
+    # nohash_cmds \
 
 
 
@@ -132,7 +133,6 @@ bindkey '^[[B' down-or-fake-accept-line
 # Want colour, if we can have it
 
 alias ls="ls --color"
-
 
 
 
