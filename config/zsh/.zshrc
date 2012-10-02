@@ -105,6 +105,16 @@ bindkey "^[[8~" end-of-line
     bindkey "^[[4~" end-of-line 
 #fi
 
+
+# SSH
+bindkey "^@" backward-delete-char   # backspace
+bindkey "^@?3^" delete-char
+bindkey "^@?7~" beginning-of-line
+bindkey "^@?8~" end-of-line
+bindkey "^@?D" backward-char
+bindkey "^@?C" forward-char
+
+
 # From http://zshwiki.org/home/zle/ircclientlikeinput
 # allows me to get a blank line with "down", like irssi
 fake-accept-line() {
