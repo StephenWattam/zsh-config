@@ -1,4 +1,5 @@
 # Lines configured by zsh-newuser-install
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -153,4 +154,12 @@ autoload -U colors && colors
 export PROMPT="${SSH_CONNECTION+%B$HOST%(2L.[%L].)%b}%(?..%{$fg[red]%})%#%(?..%{$reset_color%}) " 
 export RPROMPT="%20<...<%~%(1j. %B%j%b.)%(?.. %{$fg[red]%}%?%{$reset_color%})"  
 
+
+
+
+# ----------------------------
+# Local config, if the file is readable
+if [[ -r ~/.zshrc.local ]] then
+    source ~/.zshrc.local
+fi
 
