@@ -137,6 +137,12 @@ bindkey '^[[B' down-or-fake-accept-line
 alias ls="ls --color"
 
 
+# Output pwd on cd if interactive.
+# chpwd() {     
+#     if [[ -o interactive ]]; then
+#         #print -Pn "%~\n" 
+#     fi
+# }
 
 
 
@@ -164,3 +170,11 @@ if [[ -r ~/.zshrc.local ]] then
     source ~/.zshrc.local
 fi
 
+
+
+
+# Print out handy "you have a new shell" info
+if [[ -o interactive ]]; then
+    date
+    pwd
+fi
