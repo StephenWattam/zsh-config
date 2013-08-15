@@ -132,17 +132,22 @@ bindkey '^[[B' down-or-fake-accept-line
 # ---------
 
 
-# Want colour, if we can have it
-
-alias ls="ls --color"
-
-
 # Output pwd on cd if interactive.
 # chpwd() {     
 #     if [[ -o interactive ]]; then
 #         #print -Pn "%~\n" 
 #     fi
 # }
+
+
+
+# Warping aliases to move pwd between terminals
+WARP_FILE=~/.warp
+alias d="WARP_FILE=~/.warp; pwd > $WARP_FILE"
+alias dl="WARP_FILE=~/.warp; cd \`cat $WARP_FILE\`; pwd"
+
+# Want colour, if we can have it
+alias ls="ls --color"
 
 
 
@@ -162,6 +167,10 @@ export PROMPT="${SSH_CONNECTION+%B$HOST%(2L.[%L].)%b}%(?..%{$fg[red]%})%#%(?..%{
 export RPROMPT="%20<...<%~%(1j. %B%j%b.)%(?.. %{$fg[red]%}%?%{$reset_color%})"  
 
 
+# Stop systemd from paging its output
+# damn, that's annoying.
+export SYSTEMD_PAGER=""
+
 
 
 # ----------------------------
@@ -169,6 +178,13 @@ export RPROMPT="%20<...<%~%(1j. %B%j%b.)%(?.. %{$fg[red]%}%?%{$reset_color%})"
 if [[ -r ~/.zshrc.local ]] then
     source ~/.zshrc.local
 fi
+
+
+
+
+
+
+
 
 
 
