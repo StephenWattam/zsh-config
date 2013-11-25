@@ -144,7 +144,7 @@ bindkey '^[[B' down-or-fake-accept-line
 # Warping aliases to move pwd between terminals
 WARP_FILE=~/.warp
 alias d="WARP_FILE=~/.warp; pwd > $WARP_FILE"
-alias dl="WARP_FILE=~/.warp; if [ -r $WARP_FILE ]; then cd \`cat $WARP_FILE\`; pwd; else echo 'No destination'; zsh -c 'exit 1'; fi;"
+alias dl="WARP_FILE=~/.warp; if [ -r $WARP_FILE ]; then cd \"\`cat $WARP_FILE\`\"; pwd; else echo 'No destination'; sh -c 'exit 1'; fi;"
 
 # Want colour, if we can have it
 alias ls="ls --color"
